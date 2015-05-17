@@ -12,16 +12,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     alert("v 0.0.4");
-   alert(device.platform);
-       $cordovaLocalNotification.add({message: 'Hello Local Notification'}) ; 
     alert(device.platform);
+    console.log("platform - " + decive.platform);
       
     if(device.platform === "iOS") {
          alert("iOS");
         window.plugin.notification.local.promptForPermission();
     }
+    
+    $cordovaLocalNotification.add({message: 'Hello Local Notification'}) ; 
+    var alarmTime = new Date();
+    alarmTime.setMinutes(alarmTime.getMinutes() + 1);
+      $cordovaLocalNotification.add({
+        id: "123456",
+        date: alarmTime,
+        message: "Hi ammu",
+        title: "Angel Here"
+      }).then(function() {
+          console.log("The nitification was set");
+      });
+      
+    
+    alert(device.platform);
+    
     $cordovaLocalNotification.add({ message: 'Hello Local Notification' }); 
-    console.log("v 0.0.4");
+    console.log("v 0.0.5");
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
