@@ -11,16 +11,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    alert("v 0.0.3");
+    alert("v 0.0.4");
    alert(device.platform);
        $cordovaLocalNotification.add({message: 'Hello Local Notification'}) ; 
     alert(device.platform);
       
     if(device.platform === "iOS") {
+         alert("iOS");
         window.plugin.notification.local.promptForPermission();
     }
     $cordovaLocalNotification.add({ message: 'Hello Local Notification' }); 
-    console.log("v 0.0.3");
+    console.log("v 0.0.4");
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
