@@ -1,6 +1,12 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $ionicPlatform) {
+    //$ionicPlatform.ready( function() {
+        console.log("device $cordovaLocalNotification");
+       //  $cordovaLocalNotification.add({ message: "Hello Pinka"});
+    //});
+    
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
